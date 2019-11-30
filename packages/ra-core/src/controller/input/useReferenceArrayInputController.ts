@@ -59,7 +59,7 @@ const useReferenceArrayInputController = ({
     // as we already have the past selected items in the store, we don't fetch them.
     useEffect(() => {
         const newIdsToFetch = difference(input.value, inputValue.current);
-        if (newIdsToFetch.length > 0) {
+        if (newIdsToFetch.length > 0 && inputValue.current) {
             setIdsToFetch(newIdsToFetch);
             setIdsToGetFromStore(inputValue.current);
         }
